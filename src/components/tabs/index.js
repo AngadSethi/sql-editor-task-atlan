@@ -11,6 +11,7 @@ import ResultsTable from "../table/resultsTable";
 import ColumnsTable from "../table/columnsTable";
 
 import { closeTab, getPropTypes } from "../../utils";
+import TabPane from "./tabPane";
 
 /**
  * The component with the tabs shown in the query space.
@@ -49,24 +50,7 @@ function QueryTabs(props) {
       active={props.activeKey === tab.eventKey}
       key={tab.eventKey}
     >
-      <QueryButtons />
-      <Row
-        style={{
-          width: "100%",
-          height: "20vh",
-        }}
-      >
-        <QuerySpace defaultQuery={tab.defaultQuery} />
-      </Row>
-      <hr />
-      <Tabs defaultActiveKey="results" className="mb-3">
-        <Tab eventKey="results" title="Results">
-          <ResultsTable tab={tab} />
-        </Tab>
-        <Tab eventKey="columns" title="Columns">
-          <ColumnsTable tab={tab} />
-        </Tab>
-      </Tabs>
+      <TabPane tab={tab} />
     </Tab.Pane>
   ));
 

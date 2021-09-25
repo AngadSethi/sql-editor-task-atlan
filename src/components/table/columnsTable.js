@@ -13,7 +13,7 @@ import { getFieldDetails, getPropTypes } from "../../utils";
  * @constructor
  */
 function ColumnsTable(props) {
-  const { result, isLoaded, error } = useFile(props.tab.title);
+  const { result, isLoaded, error } = props;
   const data = useMemo(() => {
     if (result.length === 0) {
       return [];

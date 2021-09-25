@@ -14,7 +14,7 @@ import { getPropTypes } from "../../utils";
  * @constructor
  */
 function ResultsTable(props) {
-  const { result, isLoaded, error, timeOfRequest } = useFile(props.tab.title);
+  const { result, isLoaded, error, timeOfRequest } = props;
   const data = useMemo(() => result, [result]);
 
   const columns = useMemo(() => {
