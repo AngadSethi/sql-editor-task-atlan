@@ -12,6 +12,17 @@ This is an online SQL editor built specifically for the frontend task of Atlan's
 
 ## Performance Audit
 
+- **[GTmetrix](https://gtmetrix.com/)**: The fully loaded time is **1.4 seconds**, with the first contentful paint at **969 ms**. The site receives an A grade too.
+- **[web.dev](https://web.dev/measure)**: The load time according to web.dev is **2.2 seconds**. The site also scores **96 points in performance** and **100 points in best practices**. The exact metrics are:
+  - **First Contentful Paint**: `2.2s`
+  - **Speed Index**: `2.2s`
+  - **Largest Contentful Paint**: `2.2s`
+  - **Time to Interactive**: `2.2s`
+  - **Total Blocking Time**: `0ms`
+  - **Cumulative Layout Shift**: `0`
+- **Chrome DevTools**: The load time according to Chrome DevTools is **3.97 seconds**. I got this load time from the `load` event in the Network tab of the DevTools. Along the same lines, the `DOMContentLoaded` event fires after **3.60 seconds**.
+
+
 ## Optimisations
 - The most time-saving optimisation would be **dynamic fetching**. The rows of a table are fetched only when the user requests it. Not a second before. This shaves a lot of seconds off our initial load time, by distributing that across requests.
 - **Extensive use of the `useMemo` hook**. The `useMemo` hook reduces the number of re-computations by storing the results of computations with the same dependencies. The data of tables is entirely 'memoised'.
@@ -20,6 +31,7 @@ This is an online SQL editor built specifically for the frontend task of Atlan's
   - `import Alert from "react-bootstrap/Alert";`   
   The first option imports the entire library, and then imports the Alert component, whereas the second, more optimised, way imports just the Alert component, and nothing else. This too, shaves a lot of the load time, and this is what this project uses.
 - **Keeping the number of state changes as low as possible**. While this has been accompanied by a slight reduction in the feature set, it has more than made up for it in the load time of a re-render.
+- **Reduced the number of API calls**. I have reduced the number of API calls, by using the `useEffect` hook, which shaved off almost 2 seconds after each click.
 
 ## Available Scripts
 
