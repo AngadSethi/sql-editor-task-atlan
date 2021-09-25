@@ -2,7 +2,6 @@ import { useMemo } from "react";
 
 import BaseTable from "./index";
 
-import useFile from "../../hooks/useFile";
 import { getFieldDetails, getPropTypes } from "../../utils";
 
 /**

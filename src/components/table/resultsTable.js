@@ -3,7 +3,6 @@ import { useMemo } from "react";
 import BaseTable from "./index";
 import ColumnsTable from "./columnsTable";
 
-import useFile from "../../hooks/useFile";
 import { getPropTypes } from "../../utils";
 
 /**

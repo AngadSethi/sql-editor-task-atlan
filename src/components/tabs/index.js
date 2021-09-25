@@ -3,12 +3,6 @@ import CloseButton from "react-bootstrap/CloseButton";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 import Row from "react-bootstrap/Row";
-import Tabs from "react-bootstrap/Tabs";
-
-import QueryButtons from "../query/queryButtons";
-import QuerySpace from "../query/querySpace";
-import ResultsTable from "../table/resultsTable";
-import ColumnsTable from "../table/columnsTable";
 
 import { closeTab, getPropTypes } from "../../utils";
 import TabPane from "./tabPane";
